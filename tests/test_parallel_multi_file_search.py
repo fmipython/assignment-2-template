@@ -3,7 +3,7 @@ import time
 from src.parallel_multiple_files_search import ParallelMultiFileSearch
 from src.result import Result
 
-def test_functionality_no_context():
+def test_multi_file_functionality_no_context():
     # Arrange
     search = ParallelMultiFileSearch(0)
 
@@ -37,7 +37,7 @@ def test_functionality_no_context():
         assert str(expected_result) in content
 
 
-def test_substring_search_no_context():
+def test_multi_file_substring_search_no_context():
     # Arrange
     search = ParallelMultiFileSearch(0)
 
@@ -74,7 +74,7 @@ def test_substring_search_no_context():
         assert str(expected_result) in content
     
 
-def test_non_existing_file():
+def test_multi_file_non_existing_file():
     # Arrange
     search = ParallelMultiFileSearch(0)
     is_exception_thrown = False
@@ -91,7 +91,7 @@ def test_non_existing_file():
     assert is_exception_thrown
 
 
-def test_functionality_context():
+def test_multi_file_functionality_context():
     # Arrange
     search = ParallelMultiFileSearch(2)
 
@@ -130,7 +130,7 @@ def test_functionality_context():
         for line in str(expected_result).split('\n'):
             assert line in content
 
-def test_parallelism():
+def test_multi_file_parallelism():
     # Arrange
     single_search = ParallelMultiFileSearch()
     two_search = ParallelMultiFileSearch()

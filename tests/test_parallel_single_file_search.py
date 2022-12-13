@@ -3,7 +3,7 @@ import time
 from src.parallel_single_file_search import ParallelSingleFileSearch
 from src.result import Result
 
-def test_functionality():
+def test_single_file_functionality():
     # Arrange
     search = ParallelSingleFileSearch(1)
 
@@ -37,7 +37,7 @@ def test_functionality():
         assert str(expected_result) in content
 
 
-def test_substring_search():
+def test_single_file_substring_search():
     # Arrange
     search = ParallelSingleFileSearch(1)
 
@@ -75,7 +75,7 @@ def test_substring_search():
         assert str(expected_result) in content
     
 
-def test_non_existing_file():
+def test_single_file_non_existing_file():
     # Arrange
     search = ParallelSingleFileSearch(1)
     is_exception_thrown = False
@@ -92,7 +92,7 @@ def test_non_existing_file():
     assert is_exception_thrown
 
 
-def test_parallelism():
+def test_single_file_parallelism():
     # Arrange
     single_search = ParallelSingleFileSearch(1)
     two_search = ParallelSingleFileSearch(2)
