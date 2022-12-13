@@ -1,6 +1,8 @@
 """
 Module containing the ParallelMultiFileSearch
 """
+from typing import List
+
 
 class ParallelMultiFileSearch:
     """
@@ -16,7 +18,7 @@ class ParallelMultiFileSearch:
         """
         pass
 
-    def search(self, string: str, file_paths: list[str], output_file_paths: list[str]):
+    def search(self, string: str, file_paths: List[str], output_file_paths: List[str]):
         """
         Searches for `string` in the files located at `file_paths`.
         A match is defined the following way: if `string` is seen as a substring in a line of the file,
