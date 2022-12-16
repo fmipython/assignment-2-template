@@ -147,15 +147,27 @@ def test_multi_file_parallelism():
     single_duration = single_end - single_start
 
     two_start = time.time()
-    two_search.search(string_to_search, [file_path] * 2, ['output3.txt'] * 2)
+    two_search.search(string_to_search, [file_path] * 2, ['output2_2.txt'] * 2)
     two_end = time.time()
     two_duration = two_end - two_start
 
     four_start = time.time()
-    four_search.search(string_to_search, [file_path] * 4, ['output3.txt'] * 4)
+    four_search.search(string_to_search, [file_path] * 4, ['output2_4.txt'] * 4)
     four_end = time.time()
     four_duration = four_end - four_start
+    
+    with open("output2.txt") as file_descriptor:
+        first_lines = file_descriptor.readlines()
+
+    with open("output2_2.txt") as file_descriptor:
+        second_lines = file_descriptor.readlines()
+
+    with open("output2_4.txt") as file_descriptor:
+        four_lines = file_descriptor.readlines()
 
     # Assert
     assert single_duration * 2 > two_duration
     assert two_duration * 2 > four_duration
+    assert len(first_lines) == len(second_lines) == len(four_lines) == 547
+    assert first_lines == second_lines
+    assert first_lines == four_lines
