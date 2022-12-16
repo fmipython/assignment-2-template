@@ -2,7 +2,7 @@
 Module containing the ParallelMultiFileSearch
 """
 from typing import List
-
+from src.result import Result
 
 class ParallelMultiFileSearch:
     """

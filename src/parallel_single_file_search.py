@@ -1,6 +1,7 @@
 """
 Module containing the ParallelSingleFileSearch
 """
+from src.result import Result
 
 class ParallelSingleFileSearch:
     """
