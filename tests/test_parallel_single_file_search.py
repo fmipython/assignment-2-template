@@ -118,7 +118,7 @@ def test_single_file_parallelism():
     four_end = time.time()
     four_duration = four_end - four_start
 
-    with open("output2.txt") as file_descriptor:
+    with open("output3.txt") as file_descriptor:
         first_lines = file_descriptor.readlines()
 
     with open("output3_2.txt") as file_descriptor:
