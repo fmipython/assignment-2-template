@@ -147,22 +147,22 @@ def test_multi_file_parallelism():
     single_duration = single_end - single_start
 
     two_start = time.time()
-    two_search.search(string_to_search, [file_path] * 2, ['output2_2.txt'] * 2)
+    two_search.search(string_to_search, [file_path] * 2, ['output2_1_2.txt', 'output2_2_2.txt'])
     two_end = time.time()
     two_duration = two_end - two_start
 
     four_start = time.time()
-    four_search.search(string_to_search, [file_path] * 4, ['output2_4.txt'] * 4)
+    four_search.search(string_to_search, [file_path] * 4, ['output2_1_4.txt', 'output2_2_4.txt', 'output2_3_4.txt', 'output2_4_4.txt'])
     four_end = time.time()
     four_duration = four_end - four_start
     
     with open("output2.txt") as file_descriptor:
         first_lines = file_descriptor.readlines()
 
-    with open("output2_2.txt") as file_descriptor:
+    with open("output2_1_2.txt") as file_descriptor:
         second_lines = file_descriptor.readlines()
 
-    with open("output2_4.txt") as file_descriptor:
+    with open("output2_1_4.txt") as file_descriptor:
         four_lines = file_descriptor.readlines()
 
     # Assert
