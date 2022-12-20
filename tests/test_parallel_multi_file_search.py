@@ -166,8 +166,8 @@ def test_multi_file_parallelism():
         four_lines = file_descriptor.readlines()
 
     # Assert
-    assert single_duration * 2 > two_duration
-    assert two_duration * 2 > four_duration
+    assert single_duration * 2.1 > two_duration
+    assert two_duration * 2.1 > four_duration
     assert len(first_lines) == len(second_lines) == len(four_lines) == 547
     assert first_lines == second_lines
     assert first_lines == four_lines
