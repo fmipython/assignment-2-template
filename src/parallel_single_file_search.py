@@ -11,7 +11,7 @@ class ParallelSingleFileSearch:
 
     def __init__(self, workers: int = 1) -> None:
         """
-        Initializes the MultithreadedSingleFileSearch class with a given amount (N) of workers for parallel search
+        Initializes the ParallelSingleFileSearch class with a given amount (N) of workers for parallel search
 
         Parameters:
             workers - represents the amount of workers for the parallel search. Default is 1

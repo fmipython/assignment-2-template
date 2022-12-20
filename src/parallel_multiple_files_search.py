@@ -14,7 +14,7 @@ class ParallelMultiFileSearch:
         Initializes the ParallelMultiFileSearch class with a given amount of lines to be shown in the result before and after the match
 
         Parameters:
-            context - represents the amount of lines to be included in the context. Default is 1
+            context - represents the amount of lines to be included in the context. Default is 0
         """
         pass
 
