@@ -20,7 +20,7 @@ coverage-html: init
     @python -m coverage html --omit="*/test*"
 
 lint: init
-    @python -m pylint src
+    @python -m pylint src --disable=C0116,E0401,R0903,R0913
 
 prospector: init
     @python -m prospector
